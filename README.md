@@ -1,49 +1,84 @@
-```markdown
-# ECG Anomaly Detection using Attention-based Bi-GRU Autoencoder
+# Projects Portfolio
 
-This project implements an advanced deep learning framework for electrocardiogram (ECG) anomaly detection on the benchmark **ECG5000** dataset. It leverages an **Attention-guided Bidirectional Gated Recurrent Unit (Bi-GRU) Autoencoder** to capture temporal dynamics in physiological signals and uses modern XAI (Explainable AI) techniques to provide feature-level and step-level attribution.
-
-## 🚀 Features
-- **Semi-Supervised Learning**: Trained strictly on normal ECG signals, enabling the network to learn the underlying manifold of healthy cardiac behavior.
-- **Bidirectional GRU Architecture**: Processes sequence inputs in both forward and backward directions to robustly learn temporal structures.
-- **Global Attention Mechanism**: Dynamically focuses on critical temporal intervals within the heartbeat cycle.
-- **Explainable AI (XAI)**: Uses **Captum's Integrated Gradients** to provide pixel/timestep-level attribution showing precisely why an ECG segment is classified as an anomaly.
-- **Comprehensive Evaluation**: Best classification threshold search targeting $F_1$-score optimization, producing a final accuracy of **95.24%** and $F_1$-score of **94.50%**.
+This repository contains a collection of machine learning, deep learning, and AI-focused projects covering time-series analysis, natural language processing, and fundamental concepts in recurrent neural networks. Each project is implemented as a standalone notebook and serves as a learning and experimentation workspace.
 
 ---
 
-## 📊 Dataset
-We utilize the **ECG5000** dataset from the UCR Time Series Classification Archive, consisting of 5,000 ECG sequences (length 140) of cardiac cycles:
-- **Train Set**: 500 samples
-- **Test Set**: 4,500 samples
+## Repository Overview
 
-**Class Mapping:**
-- `1` : Normal (Classified as `0` for Autoencoder training)
-- `2`, `3`, `4`, `5` : Abnormal/Anomalies (Classified as `1` for evaluation)
+This portfolio includes the following projects:
 
----
+- ECG Anomaly Detection using Attention-based Bi-GRU Autoencoder
+- Template-Based NLP
+- Vanishing Gradient Problem in RNN
 
-## 🛠️ Model Architecture
-The Autoencoder utilizes an attention bottleneck:
-1. **Encoder**: A 2-layer Bidirectional GRU yielding hidden representations across all 140 timesteps.
-2. **Attention Layer**: Learns alignment coefficients over temporal states, producing a single weighted context vector.
-3. **Latent Representation**: Projects context into a bottleneck vector representing normal heart cycle behavior.
-4. **Decoder**: A 2-layer Bidirectional GRU reconstructs the original signal from the latent space sequence.
+These projects reflect a range of topics in modern AI and data science, from healthcare signal analysis to NLP pipelines and deep learning theory.
 
 ---
 
-## 📈 Results
+## 1. ECG Anomaly Detection using Attention-based Bi-GRU Autoencoder
 
-Our trained model achieves outstanding detection statistics on the 4,500 test samples:
+This project focuses on detecting anomalies in ECG signals using a semi-supervised deep learning approach. The model is trained primarily on normal heartbeats and learns the normal structure of ECG sequences. It then identifies abnormal patterns based on reconstruction error.
 
-| Metric | Score |
-| :--- | :--- |
-| **Accuracy** | **95.24%** |
-| **Precision** | **91.17%** |
-| **Recall** | **98.08%** |
-| **F1-Score** | **94.50%** |
+### Key Features
+- Semi-supervised learning using only normal ECG data
+- Bidirectional GRU-based autoencoder
+- Attention mechanism to focus on important time steps
+- Explainable AI using Integrated Gradients
+- Performance evaluation on ECG5000 dataset
 
-### Interpretability Outcomes
-- **Attention Maps**: Highlights that the model heavily prioritizes the QRS complex and the early T-wave of the heartbeat.
-- **Integrated Gradients**: Directly demonstrates that anomalous deviations in the S-T segment or the R-peak drive high reconstruction errors and trigger anomaly alarms.
-```
+### Dataset
+The project uses the ECG5000 time-series dataset from the UCR Time Series Classification Archive.
+
+### Evaluation
+The model is evaluated using standard classification metrics such as:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+This project demonstrates how deep learning can be applied to health monitoring and anomaly detection in biomedical data.
+
+---
+
+## 2. Template-Based NLP
+
+This project explores template-based natural language processing techniques for structured text understanding and generation. It demonstrates how rules, patterns, and predefined templates can be used to process language-based tasks in a controlled and interpretable way.
+
+### Highlights
+- Rule-based NLP approach
+- Template-driven text processing
+- Simple structured language interpretation
+- Useful for deterministic workflows and lightweight NLP systems
+
+Template-based NLP is particularly useful when interpretability, control, and low computational cost are important.
+
+---
+
+## 3. Vanishing Gradient Problem in RNN
+
+This project investigates one of the major challenges in recurrent neural networks: the vanishing gradient problem. It explains why training deep or long-sequence RNNs becomes difficult and how this issue impacts learning over time.
+
+### Topics Covered
+- Why gradients vanish in sequential models
+- Effect on long-term dependencies
+- Limitations of standard RNNs
+- Alternative architectures such as LSTMs and GRUs
+- Practical strategies for improved training
+
+This notebook is a valuable resource for understanding the behavior of sequence models and the motivation behind modern recurrent architectures.
+
+---
+
+## Tech Stack
+
+This repository primarily uses:
+
+- Python
+- Jupyter Notebook
+- PyTorch
+- NumPy
+- Pandas
+- Matplotlib
+- scikit-learn
+- Captum (for explainability in ECG project)
