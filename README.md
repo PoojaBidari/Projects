@@ -9,8 +9,7 @@ This repository contains a collection of machine learning, deep learning, and AI
 This portfolio includes the following projects:
 
 - ECG Anomaly Detection using Attention-based Bi-GRU Autoencoder
-- Template-Based NLP
-- Vanishing Gradient Problem in RNN
+
 
 These projects reflect a range of topics in modern AI and data science, from healthcare signal analysis to NLP pipelines and deep learning theory.
 
@@ -41,44 +40,4 @@ This project demonstrates how deep learning can be applied to health monitoring 
 
 ---
 
-## 2. Template-Based NLP
 
-This project explores template-based natural language processing techniques for structured text understanding and generation. It demonstrates how rules, patterns, and predefined templates can be used to process language-based tasks in a controlled and interpretable way.
-
-### Highlights
-- Rule-based NLP approach
-- Template-driven text processing
-- Simple structured language interpretation
-- Useful for deterministic workflows and lightweight NLP systems
-
-Template-based NLP is particularly useful when interpretability, control, and low computational cost are important.
-
----
-
-## 3. Vanishing Gradient Problem in RNN
-
-This project investigates one of the major challenges in recurrent neural networks: the vanishing gradient problem. It explains why training deep or long-sequence RNNs becomes difficult and how this issue impacts learning over time.
-
-### Topics Covered
-- Why gradients vanish in sequential models
-- Effect on long-term dependencies
-- Limitations of standard RNNs
-- Alternative architectures such as LSTMs and GRUs
-- Practical strategies for improved training
-
-This notebook is a valuable resource for understanding the behavior of sequence models and the motivation behind modern recurrent architectures.
-
----
-
-## Tech Stack
-
-This repository primarily uses:
-
-- Python
-- Jupyter Notebook
-- PyTorch
-- NumPy
-- Pandas
-- Matplotlib
-- scikit-learn
-- Captum (for explainability in ECG project)
